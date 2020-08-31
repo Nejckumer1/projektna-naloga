@@ -45,7 +45,7 @@ def check_register():
     username = bottle.request.forms['username']
     password = bottle.request.forms['password']
     c.execute("SELECT * from Users where username='{}'".format(username))
-    neki=c.fetchall();
+    neki=c.fetchall()
     if neki == []:
         print("bla")
         c.execute("INSERT into Users (username, password, number_of_wins) VALUES ('{}','{}',0);".format(username,password))
